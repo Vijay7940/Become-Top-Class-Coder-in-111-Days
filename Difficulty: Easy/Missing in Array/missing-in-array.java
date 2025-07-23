@@ -1,14 +1,12 @@
 class Solution {
     int missingNum(int arr[]) {
         // code here
-        Arrays.sort(arr); 
-        int count = 1;
+        int n = arr.length+1;
+        long total = (long)n * (n+1) / 2;
+        int sum=0;
         for(int i=0; i<arr.length; i++){
-            if(arr[i] != count){
-                return count;
-            }
-            count++;
+           sum+=arr[i];
         }
-        return count; 
+        return (int)(total-sum);
     }
 }
